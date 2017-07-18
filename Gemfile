@@ -38,6 +38,8 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'rspec-rails'
+
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -54,3 +56,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Used to know distances
 gem 'google_maps_service'
+
+# View templating
+gem 'slim-rails'
+
+# Simplify controller
+gem 'decent_exposure'
