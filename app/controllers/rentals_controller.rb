@@ -5,12 +5,12 @@ class RentalsController < ApplicationController
   expose :rental
 
   def create
-    rental.save
+    rental = Rental.create(rental_attributes)
     respond_with(rental, location: rentals_path)
   end
 
   def update
-    rental.update_attributes(rentals_attributes)
+    rental.update_attributes(rental_attributes)
     respond_with(rental, location: rentals_path)
   end
 
@@ -21,7 +21,7 @@ class RentalsController < ApplicationController
 
   private
 
-  def rentals_attributes
+  def rental_attributes
     params.require(:rental).permit(:title)
   end
 end

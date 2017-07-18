@@ -15,6 +15,7 @@ feature 'Rental' do
     fill_in('Title', with: 'Rental')
     click_on 'Submit'
 
+    expect(page).to have_content('Your Rental has been created')
     expect(page).to have_content('Rental')
   end
 
