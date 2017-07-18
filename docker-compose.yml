@@ -1,0 +1,23 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: rails s -p 5000 -b 0.0.0.0
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /etc/localtime:/etc/localtime
+      - $SSH_AUTH_SOCK:/ssh-agent
+    links:
+      - postgres
+    ports:
+      - "5000:5000"
+    environment:
+      BUNDLE_JOBS: 20
+      SSH_AUTH_SOCK: /ssh-agent
+    container_name: koolicar
+
+  postgres:
+    image: postgres:9.5
+    ports:
+      - "5432"

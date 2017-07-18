@@ -1,0 +1,20 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: rails s -p 5000 -b 0.0.0.0
+    working_dir: /app
+    volumes:
+      - ~/.zsh_history:/root/.zsh_history
+      - ~/.zsh_history.new:/root/.zsh_history.new
+      - ~/.pryrc:/root/.pryrc
+      - ~/.pry_history:/root/.pry_history
+      - ~/.inputrc:/root/.inputrc
+      - ~/.ssh/id_rsa.pub:/root/.ssh/id_rsa.pub
+      - ~/.ssh/id_rsa:/root/.ssh/id_rsa
+      - ~/.ssh/known_hosts:/root/.ssh/known_hosts
+      - /usr/local/bundle:/usr/local/bundle
+    ports:
+      - "5000:5000"
+    environment:
+      BUNDLE_JOBS: 20
