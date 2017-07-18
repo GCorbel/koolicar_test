@@ -1,2 +1,3 @@
 - rentals.each do |rental|
-  = rental
+  = rental.title
+  = link_to 'Delete', rental, method: :delete

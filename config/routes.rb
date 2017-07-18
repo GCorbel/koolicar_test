@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources :rentals
+  resources :rentals, except: :show
 end

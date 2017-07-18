@@ -62,3 +62,7 @@ gem 'slim-rails'
 
 # Simplify controller
 gem 'decent_exposure'
+gem 'responders'
+
+# Simplify form creation
+gem 'simple_form'
