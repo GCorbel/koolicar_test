@@ -10,7 +10,8 @@ table.table.table-striped
         td
           = rental.title
         td
-          = rental.distance
+          = number_with_delimiter rental.distance, delimiter: ' '
+          |&nbsp;meters
         td
           = link_to 'Edit', edit_rental_path(rental)
           |&nbsp;-&nbsp;
