@@ -3,6 +3,7 @@ en:
     labels:
       rental:
         title: Title
+        csv_file: Add a CSV file with waypoints
   flash:
     rentals:
       create:

@@ -1,4 +1,9 @@
 = simple_form_for rental, html: { class: 'form-horizontal' } do |f|
   = f.input :title
-  = f.input :csv_file, as: :file
-  = f.submit 'Submit', class: 'btn'
+  = f.input :csv_file, as: :file, input_html: { style: 'display: none' },
+    label_html: { class: 'btn btn-default' }
+  .form-group
+    .col-lg-offset-2.col-lg-10
+      = link_to 'Cancel', rentals_path, class: 'btn btn-danger'
+      '
+      = f.submit 'Submit', class: 'btn btn-default'
