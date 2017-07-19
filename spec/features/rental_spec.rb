@@ -13,10 +13,12 @@ feature 'Rental' do
     visit new_rental_path
 
     fill_in('Title', with: 'Rental')
+    attach_file 'Csv file', "#{Rails.root}/spec/fixtures/data.csv"
     click_on 'Submit'
 
     expect(page).to have_content('Your Rental has been created')
     expect(page).to have_content('Rental')
+    expect(page).to have_content('2267883')
   end
 
   scenario 'Edit a rental' do
