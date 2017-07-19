@@ -5,16 +5,17 @@ table.table.table-striped
       th Distance
       th Actions
   tbody
-    - rentals.each do |rental|
-      tr
-        td
-          = rental.title
-        td
-          = number_with_delimiter rental.distance, delimiter: ' '
-          |&nbsp;meters
-        td
-          = link_to 'Edit', edit_rental_path(rental)
-          |&nbsp;-&nbsp;
-          = link_to 'Delete', rental, method: :delete, data: { turbolinks: false }
+    - cache rentals do
+      - rentals.each do |rental|
+        tr
+          td
+            = rental.title
+          td
+            = number_with_delimiter rental.distance, delimiter: ' '
+            |&nbsp;meters
+          td
+            = link_to 'Edit', edit_rental_path(rental)
+            |&nbsp;-&nbsp;
+            = link_to 'Delete', rental, method: :delete
 
 = link_to 'Add a new rental', new_rental_path
