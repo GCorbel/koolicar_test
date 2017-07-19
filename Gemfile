@@ -59,6 +59,7 @@ gem 'google_maps_service'
 
 # View templating
 gem 'slim-rails'
+gem 'twitter-bootstrap-rails'
 
 # Simplify controller
 gem 'decent_exposure'
