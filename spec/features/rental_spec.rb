@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 feature 'Rental' do
+  around do |example|
+    VCR.use_cassette('rental') do
+      example.run
+    end
+  end
+
   scenario 'List rentals' do
     create(:rental, title: 'Rental')
 

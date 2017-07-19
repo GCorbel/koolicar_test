@@ -60,4 +60,9 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
 end
 
+VCR.configure do |config|
+  config.cassette_library_dir = "fixtures/vcr_cassettes"
+  config.hook_into :webmock
+end
+
 Capybara.ignore_hidden_elements = false
